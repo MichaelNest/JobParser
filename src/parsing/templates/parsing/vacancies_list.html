@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    {% for obj in object_list %}
+        <div class="card my-3" >
+            <h5 class="card-header"><a href="{{ obj.url }}">{{ obj.title }}</a></h5>
+            <div class="card-body">
+                <p class="card-text">{{ obj.description }}</p>
+                <p>{{ obj.city.name }} | {{ obj.language.name }} | {{ obj.create_time }}</p>
+            </div>
+        </div>
+    
+    {% empty %}
+    <div class="text-center">
+        <h3>К сожалению по вашему запросу ничего не найдено.</h3>
+    </div>
+    {% endfor %}
+
+<!--    <form action="">-->
+<!--        <label for="city">Город</label> <br>-->
+<!--        <input type="text" name="city"> <br>-->
+<!--        <input type="submit" value="Отправить">-->
+<!--    </form>-->
+<!--    <form method='GET' action="">-->
+<!--&lt;!&ndash;        <label >Город</label> <br>&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="text" name="city"> <br>&ndash;&gt;-->
+<!--&lt;!&ndash;        <label >Язык программирования</label> <br>&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="text" name="language"> <br>&ndash;&gt;-->
+<!--        {{ form.as_p }}-->
+<!--        <input type="submit" value="Отправить">-->
+<!--    </form>-->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mx-auto"</div>
+    <form method='GET' action="">
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+  <button type="submit" class="btn btn-primary">Выбрать</button>
+    </form>
+            </div>
+            </div>
+    <br><br><br>
+
+    </div>
+
+{% endblock content %}
